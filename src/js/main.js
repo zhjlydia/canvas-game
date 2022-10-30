@@ -17,6 +17,8 @@ let ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+const screenWidth = window.innerWidth;
+
 let databus = new DataBus();
 
 /**
@@ -56,7 +58,7 @@ export default class Main {
   }
   initFirstFloor() {
     let floor = new FloorNormal();
-    floor.init(2.5, 100, 450);
+    floor.init(2.5, screenWidth/2-floor.width/2, 450);
     databus.floors.push(floor);
   }
   /**
